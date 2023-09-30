@@ -13,6 +13,8 @@ Functionality of **TensorPCA** includes
 
 For a quick start, we can first randomly generate a 3-dim tensor factor model by the following code:
 ```
+from Tensor.dgp import DGP
+
 R = 2 # rank, number of factors
 # tensor size TxNxJ
 T = 100
@@ -25,6 +27,8 @@ The above code assigns the randomly generated tensor to variable `Y`, the scale 
 
 Then following code inputs the tensor `Y` into a class of functions:
 ```
+from Tensor.tensorpca import TensorPCA
+
 Z = TensorPCA(Y)
 ```
 The class has method *tensor matricization (unfolding)*:
