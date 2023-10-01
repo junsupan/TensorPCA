@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: TensorPCA
+Version: 0.1.0
+Summary: Tensor Principal Component Analysis
+Home-page: https://github.com/shuds13/pyexample
+Author: Junsu Pan
+Author-email: junsupan1994@gmail.com
+License: GNU General Public
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+License-File: LICENSE.txt
+Requires-Dist: scipy
+Requires-Dist: numpy

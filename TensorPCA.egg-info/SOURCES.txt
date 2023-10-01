@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+TensorPCA/__init__.py
+TensorPCA/base.py
+TensorPCA/dgp.py
+TensorPCA/tensorpca.py
+TensorPCA.egg-info/PKG-INFO
+TensorPCA.egg-info/SOURCES.txt
+TensorPCA.egg-info/dependency_links.txt
+TensorPCA.egg-info/requires.txt
+TensorPCA.egg-info/top_level.txt
