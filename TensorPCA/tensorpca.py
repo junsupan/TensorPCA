@@ -91,23 +91,19 @@ class TensorPCA:
         return self.s_hat, self.m_hat
             
     
-    def ranktest(self, k, K, M=5000, progress=True):
+    def ranktest(self, TW_dist):
         """
         Hypothesis Testing:
             Null: rank <= k
             Alternative: k < rank <= K
         where rank means the number of factors
+        
+        
 
         Parameters
         ----------
-        k : int
-            number of factors to be tested, "k" in the paper.
-        K : int
-            upper limit of the alternative hypothesis.
-        M : int, optional
-            number of repitions to approximate the statistic distribution. The default is 5000.
-        progress : boolean, optional
-            whether to display the progress of approximation. The default is True.
+        TW_dist : tuple contains k, K, and the approximated distribution
+            approximated distribution of statistic, run "dist" function first.
 
         Returns
         -------
@@ -117,33 +113,10 @@ class TensorPCA:
             p-values of the statistics in each mode.
 
         """
-
-        
-        if progress == True:
-            print('Approximating Statistic Distribution, Progress:')
-        elif progress == False:
-            print('Statistic Distribution Approximating Progress Hidden.')
-        
-        # Simulates the TW distribution for the test statistic
-        self.TW_dist = np.empty(M)
-        for i in range(M):
-            
-            if (i+1) % 100 == 0:
-                print(str(i+1)+'/'+str(M)) # displaying progress
-                
-            Z = np.random.normal(0,1,(1000,1000))
-            Z = np.tril(Z,-1)
-            Z = Z + Z.transpose()
-            Z[np.diag_indices_from(Z)] = np.random.normal(0,np.sqrt(2),1000)
-            
-            s, _ = LA.eig(Z)
-            s = np.sort(s)[::-1]
-            
-            eig_ratio = np.empty(K-k)
-            for r in range(K-k):
-                eig_ratio[r] = (s[r] - s[r+1])/(s[r+1] - s[r+2])
-            
-            self.TW_dist[i] = max(eig_ratio)
+        k = TW_dist[0]
+        K = TW_dist[1]
+        M = len(TW_dist[2])
+        dist = TW_dist[2]
             
         # Test for each dimension
         self.S = np.empty(self.order)
@@ -156,10 +129,10 @@ class TensorPCA:
             # Calculates the test statistic
             eig_ratio = np.empty(K-k)
             for r in range(K-k):
-                eig_ratio[r] = (s[r] - s[r+1])/(s[r+1] - s[r+2])
+                eig_ratio[r] = (s[k+r] - s[k+r+1])/(s[k+r+1] - s[k+r+2])
             
             self.S[mode] = max(eig_ratio)
-            self.p[mode] = sum(self.TW_dist > self.S[mode])/M
+            self.p[mode] = sum(dist > self.S[mode])/M
             
         return self.S, self.p
 

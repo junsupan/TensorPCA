@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 30 11:46:16 2023
-
-@author: junsupan
-"""
 
 """
 Example code
+
+See 'simulation.py' for a simulation in Hypothesis testing
 
 """
 import numpy as np
@@ -48,3 +45,4 @@ print(' - estimated vector components: \n'+\
       'estimated factors \n'+str(M_hat['0'])+'\n \n'+\
           'estimated loadings lambda \n'+str(M_hat['1'])+'\n \n'+\
               'estimated loadings mu \n'+str(M_hat['2']))
+    

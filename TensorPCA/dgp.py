@@ -51,11 +51,12 @@ def DGP(shape, R):
         
     # generating scale component, singal strength
     s = np.sqrt(np.prod(shape)) * np.array(range(R,0,-1))
+    # s = np.sqrt(np.prod(shape)) * np.array([2,0.8])
     
     Y = factor2tensor(s,M)
     
     # generating idiosyncratic noise
-    sig_u = 0.1
+    sig_u = 1
     U = sig_u * np.random.normal(0,1,shape)
     
     # add noise to tensor Y
