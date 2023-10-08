@@ -6,6 +6,7 @@ Created on Tue Oct  3 16:42:29 2023
 @author: junsupan
 """
 
+import pkg_resources
 import numpy as np
 from numpy import linalg as LA
 
@@ -36,18 +37,27 @@ def dist(k, K, M=5000, progress=True):
         p-values of the statistics in each mode.
 
     """
-
+    if k >= K:
+        raise ValueError('k must be smaller than K')
+        
+    if k <= 0:
+        raise ValueError('k must be a positive integer')
+        
+    # Using pre-created distributions
+    if k in range(1,10):
+        if K in range(k+1,11):
+            path = pkg_resources.resource_filename(__name__, 'distributions/k'+str(k)+'K'+str(K)+'.csv')
+            TW_dist = np.loadtxt(path,delimiter=',')
+            return k, K, TW_dist
     
     if progress == True:
-        print('Approximating Statistic Distribution, Progress:')
-    elif progress == False:
-        print('Statistic Distribution Approximating Progress Hidden.')
+        print('The required hypothesis test \"k = '+str(k)+', K = '+str(K)+'\" does not have a pre-created distribution, initiating distribution approximation.\nProgress:')
     
     # Simulates the TW distribution for the test statistic
     TW_dist = np.empty(M)
     for i in range(M):
         
-        if (i+1) % 100 == 0:
+        if progress == True and (i+1) % 100 == 0:
             print(str(i+1)+'/'+str(M)) # displaying progress
             
         Z = np.random.normal(0,1,(1000,1000))

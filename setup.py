@@ -12,7 +12,7 @@ setup(
     name='TensorPCA',
     version='0.1.0',    
     description='Tensor Principal Component Analysis',
-    url='https://github.com/shuds13/pyexample',
+    url='https://github.com/junsupan/TensorPCA',
     author='Junsu Pan',
     author_email='junsupan1994@gmail.com',
     license='GNU General Public',
@@ -28,4 +28,5 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
+    include_package_data=True,
 )

@@ -14,7 +14,7 @@ from TensorPCA.tensorpca import TensorPCA
 from TensorPCA.dgp import DGP
 from TensorPCA.hyptest import dist
 
-R = 1 # rank
+R = 2 # rank
 # tensor size TxNxJ
 T = 40
 N = 30
