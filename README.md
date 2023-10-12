@@ -4,7 +4,12 @@
 For a brief introduction of the tensor factor model, please check out my [website](https://junsupan.github.io).
 
 ## Installation
-In your terminal, `cd` to a directory where you want to save the package, then run
+Recommonded installation:
+```
+pip install TensorPCA==0.1.0
+```
+
+Alternatively, in your terminal, `cd` to a directory where you want to save the package, then run
 ```
 git clone https://github.com/junsupan/TensorPCA
 cd TensorPCA
