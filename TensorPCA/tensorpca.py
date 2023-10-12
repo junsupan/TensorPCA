@@ -84,7 +84,7 @@ class TensorPCA:
         self.s_hat = {}
         self.m_hat = {}
         for mode in range(self.order):
-            s, gamma = LA.eig(self.unfolded[str(mode)] @ self.unfolded[str(mode)].transpose()) # Eigen-decomposition
+            s, gamma = LA.eigh(self.unfolded[str(mode)] @ self.unfolded[str(mode)].transpose()) # Eigen-decomposition
             self.s_hat[str(mode)] = np.sqrt(np.sort(s)[::-1][:R]).real # scale components
             self.m_hat[str(mode)] = gamma[:,s.argsort()[::-1][:R]].real # vector components
             
@@ -123,7 +123,7 @@ class TensorPCA:
         self.p = np.empty(self.order)
         for mode in range(self.order):
             # Calculates eigen value for each dimension
-            s, _ = LA.eig(self.unfolded[str(mode)] @ self.unfolded[str(mode)].transpose())
+            s, _ = LA.eigh(self.unfolded[str(mode)] @ self.unfolded[str(mode)].transpose())
             s = np.sort(s)[::-1]
             
             # Calculates the test statistic

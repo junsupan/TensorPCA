@@ -13,6 +13,7 @@ from TensorPCA.tensorpca import TensorPCA
 from TensorPCA.dgp import DGP
 
 
+
 R = 2 # rank
 # tensor size TxNxJ
 T = 40
@@ -27,6 +28,7 @@ Z = TensorPCA(Y)
 
 # estimate tensor factor model parameters
 s_hat, M_hat = Z.t_pca(2)
+
 
 print('True parameters simulated:\n')
 

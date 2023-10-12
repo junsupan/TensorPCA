@@ -65,7 +65,7 @@ def dist(k, K, M=5000, progress=True):
         Z = Z + Z.transpose()
         Z[np.diag_indices_from(Z)] = np.random.normal(0,np.sqrt(2),1000)
         
-        s, _ = LA.eig(Z)
+        s, _ = LA.eigh(Z)
         s = np.sort(s)[::-1]
         
         eig_ratio = np.empty(K-k)
