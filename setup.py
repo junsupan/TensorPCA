@@ -12,10 +12,12 @@ setup(
     name='TensorPCA',
     version='0.1.0',    
     description='Tensor Principal Component Analysis',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     url='https://github.com/junsupan/TensorPCA',
     author='Junsu Pan',
     author_email='junsupan1994@gmail.com',
-    license='GNU General Public',
+    license='MIT',
     packages=['TensorPCA'],
     install_requires=['scipy',
                       'numpy'                     
@@ -23,7 +25,7 @@ setup(
 
     classifiers=[
         'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: GNU License',  
+        'License :: OSI Approved :: MIT License',  
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
