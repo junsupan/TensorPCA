@@ -18,10 +18,10 @@ pip install -e .
 
 ## TensorPCA Guide
 
-Functionality of **TensorPCA** includes 
-1. *tensor matricization (unfolding)*, 
-1. *tensor factor model estimation*, 
-1. *hypothesis test for selecting number of factors*, 
+Functionality of **TensorPCA** includes
+1. *tensor matricization (unfolding)*,
+1. *tensor factor model estimation*,
+1. *hypothesis test for selecting number of factors*,
 1. *generating random tensor data*.
 
 ## Testing
@@ -82,9 +82,9 @@ Note: The distribution approximation process takes considerable amount of time, 
 
 ## Citing
 
-If you use TensorPCA in an academic paper, please cite 
+If you use TensorPCA in an academic paper, please cite
 
-Babii, Andrii, Eric Ghysels, and Junsu Pan. **"Tensor Principal Component Analysis."** *arXiv preprint arXiv:2212.12981* (2022). 
+Babii, Andrii, Ghysels, Eric, and Pan, Junsu. **"Tensor Principal Component Analysis."** *arXiv preprint arXiv:2212.12981* (2022). 
 https://arxiv.org/abs/2212.12981
 
 If you have any question, please contact junsupan1994@gmail.com
