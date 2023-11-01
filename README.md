@@ -84,7 +84,7 @@ Note: The distribution approximation process takes considerable amount of time, 
 
 If you use TensorPCA in an academic paper, please cite
 
-Babii, Andrii, Ghysels, Eric, and Pan, Junsu. **"Tensor Principal Component Analysis."** *arXiv preprint arXiv:2212.12981* (2022). 
+Babii, Andrii, Ghysels, Eric, and Pan, Junsu. **"Tensor Principal Component Analysis."** *arXiv preprint arXiv:2212.12981* (2022).
 https://arxiv.org/abs/2212.12981
 
-If you have any question, please contact junsupan1994@gmail.com
+If you have any question, please contact [junsupan@live.unc.edu](junsupan@live.unc.edu)
