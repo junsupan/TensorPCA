@@ -1,5 +1,5 @@
 # TensorPCA
-**TensorPCA** or **TPCA** is shot for *Tensor Principal Component Analysis*, it is an extension of PCA to tensor (higher dimensional) datasets that estimates tensor factor models. TensorPCA is a Python package that implements the algorithm introduced in the paper [*Tensor Principal Component Analysis*](https://arxiv.org/abs/2212.12981).
+**TensorPCA** or **TPCA** is short for *Tensor Principal Component Analysis*, it is an extension of PCA to tensor (higher dimensional) datasets that estimates tensor factor models. TensorPCA is a Python package that implements the algorithm introduced in the paper [*Tensor Principal Component Analysis*](https://arxiv.org/abs/2212.12981).
 
 For a brief introduction of the tensor factor model, please check out my [website](https://junsupan.github.io).
 
